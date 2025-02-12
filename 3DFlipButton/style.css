@@ -31,6 +31,7 @@ body {
   cursor: pointer;
 }
 
+/* 마우스 올리면 90도 회전 */
 .flip-btn:hover {
   transform: rotateX(-90deg);
 }
