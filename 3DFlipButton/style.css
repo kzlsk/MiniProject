@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+}
+
+/* 중앙 위치 */
+.container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  /* 원근감 효과 => 작으면 작을수록 가까이서 보는 느낌 */
+  perspective: 1000px;
+}
+
+.flip-btn {
+  width: 200px;
+  height: 100px;
+  color: white;
+  text-align: center; /* 수평 중앙 정렬 */
+  /*어떤 요소의 높이 값과 line-height 값이 같으면 수직 중앙 정렬이 됨 (단, 텍스트 한줄일때만*/
+  line-height: 100px;
+  /* 하위 요소들 3d 공간에 배치 */
+  transform-style: preserve-3d;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.flip-btn:hover {
+  transform: rotateX(-90deg);
+}
+
+.front {
+  background-color: goldenrod;
+  height: 100px;
+  transform: translateZ(50px);
+}
+
+.back {
+  background-color: darkgoldenrod;
+  height: 100px;
+  /* X축 기준으로 회전 */
+  transform: rotateX(90deg) translateZ(150px);
+}
