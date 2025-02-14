@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #1f1f1f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  perspective: 1000px; /* 원근감 */
+}
+
+.cube {
+  width: 128px;
+  height: 128px;
+  transform-style: preserve-3d; /* 큐브 클래스 하위 요소들 3d 공간에 배치 */
+  transition: all 1s;
+}
+
+.cube img {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* 큐브 클래스의 이미지 태그 중 n번째 자식 선택 */
+.cube img:nth-child(1) {
+  transform: translateZ(64px);
+}
+
+.cube img:nth-child(2) {
+  transform: rotateX(90deg) translateZ(64px);
+}
+
+.cube img:nth-child(3) {
+  transform: rotateX(180deg) translateZ(64px);
+}
+
+.cube img:nth-child(4) {
+  transform: rotateX(270deg) translateZ(64px);
+}
