@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Developer Keyboard</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="keyboard">
+      <div class="keyboard-wrapper">
+        <div class="key key_ctrl key-17">
+          <div class="keycap">Ctrl</div>
+        </div>
+        <div class="key key-90">
+          <div class="keycap">Z</div>
+        </div>
+        <div class="key key-67">
+          <div class="keycap">C</div>
+        </div>
+        <div class="key key-86">
+          <div class="keycap">V</div>
+        </div>
+      </div>
+    </div>
+    <script>
+      document.addEventListener("keydown", (e) => {
+        const key = document.querySelector(`.key-${e.keyCode}`);
+        if (key) {
+          key.classList.add("pressed");
+        }
+      });
+      document.addEventListener("keyup", (e) => {
+        const key = document.querySelector(`.key-${e.keyCode}`);
+        if (key) {
+          key.classList.remove("pressed");
+        }
+      });
+    </script>
+  </body>
+</html>
